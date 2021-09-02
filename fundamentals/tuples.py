@@ -24,3 +24,13 @@ x = (1,5,6,9,2)
 print(len(x))
 # output:
 # 5
+
+def get_circle_area(r):
+    #Return (circumference, area) of a circle of radius r
+    c = 2 * math.pi * r
+    a = math.pi * r * r
+    return (c, a)
+
+import language
+print(language.translate(dog))
+# output would look something like: ("dog", "chien", "perro")
