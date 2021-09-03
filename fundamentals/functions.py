@@ -26,3 +26,10 @@ introduction('Col')
 def introduction(food, name = "Col"):
     print(f'Hello, my name is {name} and I like {food}')
 introduction('ramen')
+
+def be_cheerful(name = 'mr. nibbles', repeat = 2):
+    print(f'Good morning {name}\n' * repeat)
+
+be_cheerful('Col-R')
+be_cheerful()
+be_cheerful(repeat=4, name='Zuko')
