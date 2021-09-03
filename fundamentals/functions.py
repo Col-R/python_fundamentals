@@ -7,7 +7,8 @@
 # call the function
 # print(myFunction())
 
-# Every function returns something
+# Not every function has to return a value
+# A return value is the value that remains after the function's block of code has completed
 
 # def a():
 #     return 5
