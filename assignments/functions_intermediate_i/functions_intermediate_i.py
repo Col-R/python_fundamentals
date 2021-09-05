@@ -33,13 +33,33 @@ def sportUpdate():
 sportUpdate()
 print(sports_directory)
 
-#1.4 - Change the value 20 in z to 30
+# 1.4 - Change the value 20 in z to 30
 z = [ {'x': 10, 'y': 20} ]
 
 def zUpdate():
     z[0]['y'] = 30
 zUpdate()
 print(z)
+
+# 2 - Iterate Through a List of Dictionaries
+# Create a function iterateDictionary(some_list) that, given a list of dictionaries, the function loops through each dictionary in the list and prints each key and the associated value. For example, given the following list:
+students = [
+         {'first_name':  'Michael', 'last_name' : 'Jordan'},
+         {'first_name' : 'John', 'last_name' : 'Rosales'},
+         {'first_name' : 'Mark', 'last_name' : 'Guillen'},
+         {'first_name' : 'KB', 'last_name' : 'Tonel'}
+    ]
+def iterateDictionary(students):
+    for x in range(len(students)):
+        for key in students[x]:
+            if key == 'first_name':
+                print('first_name - ' + students[x][key])
+            else:
+                print('last_name - ' + students[x][key])
+iterateDictionary(students)
+
+
+
 
 
 
