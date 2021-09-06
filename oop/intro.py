@@ -33,6 +33,10 @@ class User:
         print(f"{self.last_name}'s total score is now {self.points}")
         return self
 
+    @classmethod
+    def change(arg):
+        pass
+
 # instanciating the User class
 michael = User('michael', 'jordan', 58, 32292)
 steph = User('stephen', 'curry', 32, 18434)
