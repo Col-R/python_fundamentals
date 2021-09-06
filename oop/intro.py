@@ -25,11 +25,13 @@ class User:
 
     def greeting (self):
         print(f'Hello my name is {self.first_name}!')
+        return self
 
     #adding the score method
     def score(self, amount): #takes an argument that is the amount of the score
         self.points += amount #the specific user's score points insceases by the specified amount
         print(f"{self.last_name}'s total score is now {self.points}")
+        return self
 
 # instanciating the User class
 michael = User('michael', 'jordan', 58, 32292)
@@ -37,3 +39,6 @@ steph = User('stephen', 'curry', 32, 18434)
 
 michael.greeting()
 steph.score(50)
+
+# method chaining - must return self in method definition
+steph.score(50).greeting()
