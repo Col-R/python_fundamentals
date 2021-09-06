@@ -3,6 +3,7 @@ class BankAccount:
         # Make user class later
         self.int_rate = int_rate
         self.balance = balance
+
     def deposit(self, amount):
         self.balance += amount
         return self
@@ -12,6 +13,7 @@ class BankAccount:
         else:
             print('Insufficient funds: Charging a $5 fee')
             self.balance = self.balance - 5
+
         return self
     def display_account_info(self):
         print (f'Your balance is: ${self.balance}')
