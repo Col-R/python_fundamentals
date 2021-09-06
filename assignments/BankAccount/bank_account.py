@@ -2,12 +2,27 @@ class BankAccount:
     def __init__(self, int_rate, balance):
         # Make user class later
         self.int_rate = int_rate
-        self.balnce = balance
+        self.balance = balance
     def deposit(self, amount):
-        pass
+        self.balance += amount
+        return self
     def withdraw(self,amount):
-        pass
+        if self.balance >= amount:
+            self.balance -= amount
+        else:
+            print('Insufficient funds: Charging a $5 fee')
+            self.balance = self.balance - 5
+        return self
     def display_account_info(self):
-        pass
+        print (f'Your balance is: ${self.balance}')
+        return self
     def yield_interest(self):
-        pass
+        if self.balance > 0:
+            self.balance = self.balance + (self.int_rate * self.balance)
+        return self
+
+acc1 = BankAccount(.02, 1000)
+acc1.deposit(300).deposit(250).deposit(500).withdraw(80).yield_interest().display_account_info()
+
+acc2 = BankAccount(.02, 2000)
+acc2.deposit(100).deposit(650).withdraw(150).withdraw(800).withdraw(425).withdraw(390).yield_interest().display_account_info()
