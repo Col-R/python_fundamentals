@@ -30,10 +30,31 @@ class BankAccount:
         for account in cls.accounts:
             account.display_account_info()
 
-acc1 = BankAccount(.02, 1000)
-# acc1.deposit(300).deposit(250).deposit(500).withdraw(80).yield_interest().display_account_info()
 
-acc2 = BankAccount(.02, 2000)
-# acc2.deposit(100).deposit(650).withdraw(150).withdraw(800).withdraw(425).withdraw(390).yield_interest().display_account_info()
+class User:
+    def __init__(self, name):
+        self.name = name
+        self.account = {
+            'checking' : BankAccount(0.01, 1000),
+            'savings' : BankAccount(0.05, 9500)
+        }
 
-BankAccount.print_all_accounts()
+    def makeDeposit(self, amount):
+        self.account.deposit(amount)
+        return self
+    def makeWithdrawal(self, amount):
+        self.account.withdraw(amount)
+        return self
+    def displayBalance(self):
+        self.account.display_account_info()
+        return self
+
+
+# acc1 = BankAccount(.02, 1000)
+# # acc1.deposit(300).deposit(250).deposit(500).withdraw(80).yield_interest().display_account_info()
+# acc2 = BankAccount(.02, 2000)
+# # acc2.deposit(100).deposit(650).withdraw(150).withdraw(800).withdraw(425).withdraw(390).yield_interest().display_account_info()
+# BankAccount.print_all_accounts()
+
+yuri = User("Yuri")
+yuri.account['checking'].deposit(150).display_account_info()
