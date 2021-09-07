@@ -14,6 +14,11 @@
 # Classes
 
 # creating a class
+class Athlete:
+    def __init__(self, number, team):
+        self.number=number
+        self.team = team
+
 class User:
     # constructor function
     def __init__(self,first_name, last_name, age, points):
@@ -22,6 +27,11 @@ class User:
         self.last_name = last_name
         self.age = age
         self.points = points
+        # adding a reference to another class in a different file
+        self.career = Athlete(23, 'Chicago Bulls')
+
+    def showTeam(self):
+        print (self.career.team)
 
     def greeting (self):
         print(f'Hello my name is {self.first_name}!')
@@ -46,3 +56,4 @@ steph.score(50)
 
 # method chaining - must return self in method definition
 steph.score(50).greeting()
+michael.showTeam()
