@@ -7,32 +7,48 @@ class Ninja:
         self.pet_food = pet_food
 
     def walk(self):
-        Pet.play(Ninja)
-    def feed(arg):
-        pass
-    def bathe(arg):
-        pass
+        Pet.play(self)
+        return self
+    def feed(self):
+        Pet.eat(self, 10)
+        return self
+    def bathe(self):
+        Pet.noise(self)
 
 class Pet:
-    def __init__(self, name, type, tricks):
+    def __init__(self, name, type, tricks, health = 100, energy=50):
         self.name = name
         self.type = type
         self.tricks = tricks
-        self.energy = 10
-        self.health = 10
+        self.energy = energy
+        self.health = health
 
-    def sleep(arg):
-        pass
-    def eat(arg):
-        pass
+    def sleep(self):
+        print('sleeping')
+        self.energy += 25
+        return self
+    def eat(self):
+        print('eating')
+        self.health += 10
+        self.energy += 5
+        print (self.health)
+        print (self.energy)
+        return self
     def play(self):
-
-        self.health +=5
+        print ('playing')
+        self.health += 5
+        print (self.health)
         return self
     def noise(self):
         print('Meow!')
+        return self
+
+    # def addHealth(self, amount):
+    #     self.health += amount
+    #     print (health)
 
 ninja = Ninja('Rock', 'Lee', 'cat', 'salmon', 'cat food' )
 cat = Pet('Whisker', 'cat', 'sleep')
 
-ninja.walk()
+# ninja.walk().feed().bathe()
+cat.eat().play()
