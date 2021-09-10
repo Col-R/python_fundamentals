@@ -1,3 +1,28 @@
+class Pet:
+    def __init__(self, name, type, tricks, noise):
+        self.name = name
+        self.type = type
+        self.tricks = tricks
+        self.noise = noise
+        self.energy = 50
+        self.health = 100
+
+
+
+    def sleep(self):
+        self.energy += 25
+        return self
+    def eat(self):
+        self.health += 10
+        self.energy += 5
+        return self
+    def play(self):
+        self.health += 5
+        return self
+    def noise(self):
+        print(self.noise)
+        return self
+
 class Ninja:
     def __init__(self, first_name, last_name, pet, treats, pet_food):
         self.first_name = first_name
@@ -7,48 +32,25 @@ class Ninja:
         self.pet_food = pet_food
 
     def walk(self):
-        Pet.play(self)
+        self.pet.play()
         return self
     def feed(self):
-        Pet.eat(self, 10)
+        self.pet.eat()
         return self
     def bathe(self):
-        Pet.noise(self)
+        self.pet.noise()
+        return self
 
-class Pet:
-    def __init__(self, name, type, tricks, health = 100, energy=50):
-        self.name = name
-        self.type = type
-        self.tricks = tricks
-        self.energy = energy
-        self.health = health
 
-    def sleep(self):
-        print('sleeping')
-        self.energy += 25
-        return self
-    def eat(self):
-        print('eating')
-        self.health += 10
-        self.energy += 5
-        print (self.health)
-        print (self.energy)
-        return self
-    def play(self):
-        print ('playing')
-        self.health += 5
-        print (self.health)
-        return self
-    def noise(self):
-        print('Meow!')
-        return self
 
     # def addHealth(self, amount):
     #     self.health += amount
     #     print (health)
 
-ninja = Ninja('Rock', 'Lee', 'cat', 'salmon', 'cat food' )
-cat = Pet('Whisker', 'cat', 'sleep')
 
-# ninja.walk().feed().bathe()
-cat.eat().play()
+yuri = Pet('Whiskera', 'cat', 'sleeps', 'Meow!')
+cole = Ninja('Rock', 'Lee', yuri , 'salmon', 'cat food' )
+
+
+cole.walk().feed()
+# cat.eat().play()
